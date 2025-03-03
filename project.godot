@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-UserIconsLoader="*res://addons/blazium_theme_editor/user_icons_loader.gd"
+UserIconsLoader="*res://user_icons_loader.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/blazium_theme_editor/plugin.cfg")
+enabled=PackedStringArray("res://addons/blazium_icons_editor/plugin.cfg", "res://addons/blazium_theme_editor/plugin.cfg")
 
 [gui]
 

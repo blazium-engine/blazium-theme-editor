@@ -1,0 +1,6 @@
+[data]
+
+default_size=32
+default_color="red"
+use_small_icons=false
+selected_icons={}
