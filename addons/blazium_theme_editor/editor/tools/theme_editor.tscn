@@ -12,6 +12,7 @@ content_margin_bottom = 2.0
 
 [node name="ThemeEditor" type="Window"]
 title = "Blazium Theme Editor"
+position = Vector2i(0, 36)
 size = Vector2i(720, 480)
 wrap_controls = true
 min_size = Vector2i(720, 480)
@@ -29,7 +30,7 @@ metadata/_edit_lock_ = true
 custom_minimum_size = Vector2(720, 480)
 layout_mode = 2
 size_flags_horizontal = 3
-split_offset = 34
+split_offset = 36
 collapse_mode = 3
 
 [node name="ThemeInspector" type="Panel" parent="HBoxContainer/HSplitContainer"]
@@ -149,7 +150,7 @@ horizontal_alignment = 1
 [node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer/HSplitContainer/PreviewPanel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "HSplitContainer"
-split_offset = 24
+split_offset = 107
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/HSplitContainer/PreviewPanel/ScrollContainer/MarginContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
@@ -362,10 +363,10 @@ size = Vector2i(276, 454)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = -2.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 275.0
+offset_bottom = 451.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_width = 24
