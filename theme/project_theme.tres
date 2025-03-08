@@ -1,0 +1,6 @@
+[gd_resource type="Theme" script_class="GeneratedTheme" load_steps=2 format=3 uid="uid://c8qig4a3cme6e"]
+
+[ext_resource type="Script" path="res://addons/blazium_theme_editor/theme/project_theme.gd" id="1_panlt"]
+
+[resource]
+script = ExtResource("1_panlt")
