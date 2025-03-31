@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://eob8ss152spm"]
 
-[ext_resource type="Script" path="res://addons/blazium_theme_editor/editor/tools/theme_editor.gd" id="1_11hrv"]
-[ext_resource type="Script" path="res://addons/blazium_theme_editor/editor/tools/inspector.gd" id="2_fjnqw"]
-[ext_resource type="Script" path="res://addons/blazium_theme_editor/editor/tools/theme_preview.gd" id="3_85iuf"]
+[ext_resource type="Script" uid="uid://dwujt8niolut8" path="res://addons/blazium_theme_editor/editor/tools/theme_editor.gd" id="1_11hrv"]
+[ext_resource type="Script" uid="uid://b4qj6nffuwjl0" path="res://addons/blazium_theme_editor/editor/tools/inspector.gd" id="2_fjnqw"]
+[ext_resource type="Script" uid="uid://csubb1fpqhu2n" path="res://addons/blazium_theme_editor/editor/tools/theme_preview.gd" id="3_85iuf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4s18"]
 content_margin_left = 2.0
@@ -363,10 +363,10 @@ size = Vector2i(276, 454)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 275.0
-offset_bottom = 451.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 274.0
+offset_bottom = 452.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_width = 24
