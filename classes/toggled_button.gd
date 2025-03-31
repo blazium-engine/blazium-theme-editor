@@ -42,6 +42,12 @@ func _init() -> void:
 	ThemeDB.icons_changed.connect(_update_text_and_icon)
 	toggled.connect(_update_text_and_icon.unbind(1))
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	pressed.connect(_pressed_timeout)
+
+func _pressed_timeout():
+	disabled = true
+	await get_tree().create_timer(0.5).timeout
+	disabled = false
 
 
 func _validate_property(property: Dictionary) -> void:
