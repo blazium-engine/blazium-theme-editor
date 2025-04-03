@@ -1,6 +1,6 @@
 [gd_resource type="Theme" script_class="GeneratedTheme" load_steps=2 format=3 uid="uid://c8qig4a3cme6e"]
 
-[ext_resource type="Script" path="res://addons/blazium_theme_editor/theme/project_theme.gd" id="1_panlt"]
+[ext_resource type="Script" uid="uid://cqvltju4t2t3" path="res://addons/blazium_theme_editor/theme/project_theme.gd" id="1_t2n81"]
 
 [resource]
-script = ExtResource("1_panlt")
+script = ExtResource("1_t2n81")
