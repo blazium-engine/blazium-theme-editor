@@ -40,7 +40,7 @@ var button_hover := StyleBoxFlat.new()
 var button_pressed := StyleBoxFlat.new()
 var button_hover_pressed := StyleBoxFlat.new()
 var button_disabled := StyleBoxFlat.new()
-
+var label_style := StyleBoxFlat.new()
 
 func generate_theme_styles():
 	var def := ThemeDB.get_default_theme()
@@ -105,6 +105,9 @@ func generate_theme_styles():
 	def.set_color("icon_focus_color", "EmojiButton", Color.WHITE)
 	def.set_color("icon_pressed_color", "EmojiButton", Color.WHITE)
 	def.set_color("icon_disabled_color", "EmojiButton", Color(1, 1, 1, 0.4))
+	# BGLabel
+	def.set_type_variation("BGLabel", "Label")
+	def.set_stylebox("normal", "BGLabel", label_style)
 
 	colors_changed()
 	icons_changed()
@@ -157,6 +160,8 @@ func colors_changed():
 	button_pressed.bg_color = pressed_color
 	button_hover_pressed.bg_color = pressed_color
 	button_disabled.bg_color = Color(disabled_color, 0.4)
+	
+	label_style.bg_color = Color(normal_color, 0.6)
 
 
 func icons_changed():
@@ -229,6 +234,7 @@ func corner_radius_changed():
 	button_pressed.set_corner_radius_all(int(corner_radius))
 	button_hover_pressed.set_corner_radius_all(int(corner_radius))
 	button_disabled.set_corner_radius_all(int(corner_radius))
+	label_style.set_corner_radius_all(int(corner_radius))
 
 
 func border_padding_changed():
