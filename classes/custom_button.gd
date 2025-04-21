@@ -2,6 +2,8 @@
 class_name CustomButton
 extends Button
 
+@export var press_timeout: float = 0.5
+
 @export var user_icon: String:
 	set(value):
 		user_icon = value
@@ -13,10 +15,12 @@ func _init() -> void:
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	pressed.connect(_pressed_timeout)
 
+
 func _pressed_timeout():
 	disabled = true
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(press_timeout).timeout
 	disabled = false
+
 
 func _update():
 	if user_icon.is_empty():
