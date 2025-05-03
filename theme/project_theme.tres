@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://cqvltju4t2t3" path="res://addons/blazium_theme_editor/theme/project_theme.gd" id="1_t2n81"]
 
 [resource]
+LineEdit/colors/selection_color = Color(0.207843, 0.580392, 0.831373, 0.498039)
 script = ExtResource("1_t2n81")
