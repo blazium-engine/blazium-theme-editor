@@ -2,7 +2,7 @@
 class_name CustomButton
 extends Button
 
-@export var press_timeout: float = 0.5
+@export var press_timeout: float = 0.25
 
 @export var user_icon: String:
 	set(value):
