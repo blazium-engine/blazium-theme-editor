@@ -3,9 +3,9 @@ class_name CustomButton
 extends Button
 
 @export var press_timeout: float = 0.25
-@export var hover_scale: float = 1.1
-@export var press_scale: float = 0.95
-@export var anim_time: float = 0.1
+var hover_scale: float = 1.1
+var press_scale: float = 0.95
+var anim_time: float = 0.1
 
 @export var user_icon: String:
 	set(value):
@@ -73,6 +73,5 @@ func _animate_scale(target_scale: float):
 	tween = create_tween()
 	
 	if target_scale != 1.0:
-		tween.tween_property(self, "scale", Vector2(target_scale + 0.1, target_scale + 0.1), 0.05).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2(target_scale, target_scale), 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
-	#tween.tween_property(self, "scale", Vector2(target_scale, target_scale), anim_time).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(self, "scale", Vector2(target_scale + 0.1, target_scale + 0.1), anim_time/2).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2(target_scale, target_scale), anim_time).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)

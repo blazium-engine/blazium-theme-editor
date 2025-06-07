@@ -49,7 +49,7 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	panel.add_child(main_vb)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.custom_minimum_size.x = 360
+	label.custom_minimum_size.x = 460
 	label.theme_type_variation = "HeaderMedium"
 	main_vb.add_child(label)
 	var buttons_hb := BoxContainer.new()
