@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://eob8ss152spm"]
 
-[ext_resource type="Script" uid="uid://dwujt8niolut8" path="res://addons/blazium_theme_editor/editor/tools/theme_editor.gd" id="1_11hrv"]
-[ext_resource type="Script" uid="uid://b4qj6nffuwjl0" path="res://addons/blazium_theme_editor/editor/tools/inspector.gd" id="2_fjnqw"]
-[ext_resource type="Script" uid="uid://csubb1fpqhu2n" path="res://addons/blazium_theme_editor/editor/tools/theme_preview.gd" id="3_85iuf"]
+[ext_resource type="Script" uid="uid://c4i0pxb7lwo0n" path="res://addons/blazium_theme_editor/editor/tools/theme_editor.gd" id="1_11hrv"]
+[ext_resource type="Script" uid="uid://265ohrcc07w4" path="res://addons/blazium_theme_editor/editor/tools/inspector.gd" id="2_fjnqw"]
+[ext_resource type="Script" uid="uid://ciuyvyoak3pnl" path="res://addons/blazium_theme_editor/editor/tools/theme_preview.gd" id="3_85iuf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4s18"]
 content_margin_left = 2.0
@@ -13,7 +13,7 @@ content_margin_bottom = 2.0
 [node name="ThemeEditor" type="Window"]
 title = "Blazium Theme Editor"
 position = Vector2i(0, 36)
-size = Vector2i(720, 480)
+size = Vector2i(1024, 640)
 wrap_controls = true
 min_size = Vector2i(720, 480)
 script = ExtResource("1_11hrv")
@@ -22,12 +22,14 @@ script = ExtResource("1_11hrv")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 304.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(720, 480)
+custom_minimum_size = Vector2(1024, 640)
 layout_mode = 2
 size_flags_horizontal = 3
 split_offset = 36
@@ -365,13 +367,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 2.0
 offset_top = 2.0
-offset_right = 274.0
-offset_bottom = 452.0
+offset_right = 457.0
+offset_bottom = 742.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_width = 24
-theme_override_constants/sv_height = 160
 theme_override_constants/sv_width = 260
+theme_override_constants/sv_height = 160
+theme_override_constants/h_width = 24
 color_mode = 1
 picker_shape = 1
 can_add_swatches = false

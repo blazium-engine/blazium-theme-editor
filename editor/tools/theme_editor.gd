@@ -95,7 +95,7 @@ func update_properties():
 	inspector.property("font/font_outline_color", get_setting("font_outline_color"),
 			"", "Outline Color")
 	inspector.property("font/font_size", get_setting("font_size"),
-			"min_value:8 max_value:32 step:1 suffix:px", "Size")
+			"min_value:8 max_value:64 step:1 suffix:px", "Size")
 	inspector.property("font/font_embolden", get_setting("font_embolden"),
 			"min_value:-2.0 max_value:2.0 step:0.1 suffix:px", "Embolden")
 	inspector.property("font/font_outline_size", get_setting("font_outline_size"),
