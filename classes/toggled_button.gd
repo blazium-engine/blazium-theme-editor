@@ -25,7 +25,7 @@ extends Button
 		_update_text_and_icon()
 
 var _tween: Tween
-var hover_scale: float = 1.1
+var hover_scale: float = 1.05
 var press_scale: float = 0.95
 var anim_time: float = 0.1
 

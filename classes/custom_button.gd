@@ -3,7 +3,7 @@ class_name CustomButton
 extends Button
 
 @export var press_timeout: float = 0.25
-var hover_scale: float = 1.1
+var hover_scale: float = 1.05
 var press_scale: float = 0.95
 var anim_time: float = 0.1
 

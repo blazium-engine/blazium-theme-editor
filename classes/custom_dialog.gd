@@ -23,6 +23,7 @@ signal cancelled
 		cancel_button.visible = not cancel.is_empty()
 
 var main_vb := VBoxContainer.new()
+var buttons_hb: BoxContainer
 var label := Label.new()
 var cancel_button := CustomButton.new()
 var confirm_button := CustomButton.new()
@@ -49,10 +50,12 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	panel.add_child(main_vb)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.custom_minimum_size.x = 460
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label.theme_type_variation = "HeaderMedium"
 	main_vb.add_child(label)
-	var buttons_hb := BoxContainer.new()
+	buttons_hb = BoxContainer.new()
+	buttons_hb.custom_minimum_size.x = 560
+	buttons_hb.resized.connect(_buttons_resized)
 	buttons_hb.set_script(load("res://addons/blazium_shared_menus/game_shared_ui/orientation_box_container.gd"))
 	buttons_hb.alignment = BoxContainer.ALIGNMENT_CENTER
 	buttons_hb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -73,6 +76,13 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	confirm_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_child(confirm_button)
 
+func _buttons_resized():
+	if get_window().size.x < 560:
+		buttons_hb.vertical = true
+		buttons_hb.custom_minimum_size.x = 260
+	else:
+		buttons_hb.vertical = false
+		buttons_hb.custom_minimum_size.x = 560
 
 func _on_button_pressed(is_confirmed: bool):
 	if is_confirmed:
