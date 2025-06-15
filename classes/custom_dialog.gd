@@ -55,7 +55,7 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	main_vb.add_child(label)
 	buttons_hb = BoxContainer.new()
 	buttons_hb.custom_minimum_size.x = 560
-	buttons_hb.resized.connect(_buttons_resized)
+	resized.connect(_buttons_resized)
 	buttons_hb.set_script(load("res://addons/blazium_shared_menus/game_shared_ui/vertical_box_container_break.gd"))
 	buttons_hb.alignment = BoxContainer.ALIGNMENT_CENTER
 	buttons_hb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -77,9 +77,9 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	buttons_hb.add_child(confirm_button)
 
 func _buttons_resized():
-	if get_window().size.x < 560:
+	if get_window().size.x < 700:
 		buttons_hb.vertical = true
-		buttons_hb.custom_minimum_size.x = 260
+		buttons_hb.custom_minimum_size.x = 300
 	else:
 		buttons_hb.vertical = false
 		buttons_hb.custom_minimum_size.x = 560
