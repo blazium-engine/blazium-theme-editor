@@ -15,9 +15,13 @@ var anim_time: float = 0.1
 var tween: Tween
 
 func _ready():
+	if Engine.is_editor_hint():
+		return
 	_resized()
+	_scale_changed()
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	ThemeDB.font_size_changed.connect(_font_size_changed)
+	ThemeDB.scale_changed.connect(_scale_changed)
+	_scale_changed.call_deferred()
 	ThemeDB.icons_changed.connect(_update)
 	pressed.connect(_pressed_timeout)
 	resized.connect(_resized)
@@ -31,8 +35,9 @@ func _ready():
 func _resized():
 	set_pivot_offset(size * 0.5)
 
-func _font_size_changed():
-	custom_minimum_size.x = 300
+func _scale_changed():
+	custom_minimum_size.x = 100 * GlobalLobbyClient.get_theme_scale().x
+	custom_minimum_size.y = 100 * GlobalLobbyClient.get_theme_scale().x
 
 func _pressed_timeout():
 	disabled = true

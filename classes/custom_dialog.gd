@@ -54,7 +54,7 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	label.theme_type_variation = "HeaderMedium"
 	main_vb.add_child(label)
 	buttons_hb = BoxContainer.new()
-	buttons_hb.custom_minimum_size.x = 560
+	buttons_hb.custom_minimum_size.x = 620
 	resized.connect(_buttons_resized)
 	buttons_hb.set_script(load("res://addons/blazium_shared_menus/game_shared_ui/vertical_box_container_break.gd"))
 	buttons_hb.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -64,25 +64,25 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	cancel_button.user_icon = "cancel"
 	cancel_button.expand_text = false
 	cancel_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	cancel_button.expand_icon = true
+	#cancel_button.expand_icon = true
 	cancel_button.pressed.connect(_on_button_pressed.bind(false))
 	cancel_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_child(cancel_button)
 	confirm_button.user_icon = "check_circle"
 	confirm_button.expand_text = false
 	confirm_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	confirm_button.expand_icon = true
+	#confirm_button.expand_icon = true
 	confirm_button.pressed.connect(_on_button_pressed.bind(true))
 	confirm_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_child(confirm_button)
 
 func _buttons_resized():
-	if get_window().size.x < 700:
+	if get_window().size.x < 800:
 		buttons_hb.vertical = true
 		buttons_hb.custom_minimum_size.x = 300
 	else:
 		buttons_hb.vertical = false
-		buttons_hb.custom_minimum_size.x = 560
+		buttons_hb.custom_minimum_size.x = 620
 
 func _on_button_pressed(is_confirmed: bool):
 	if is_confirmed:
