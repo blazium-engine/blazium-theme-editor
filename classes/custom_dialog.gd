@@ -5,18 +5,18 @@ extends PanelContainer
 signal confirmed
 signal cancelled
 
-@export var text := "Confirm":
+@export var text := "":
 	set(value):
 		text = value
 		label.text = text
 
-@export var confirm := "Yes":
+@export var confirm := "dialog_yes":
 	set(value):
 		confirm = value
 		confirm_button.text = confirm
 		confirm_button.visible = not confirm.is_empty()
 
-@export var cancel := "No":
+@export var cancel := "dialog_no":
 	set(value):
 		cancel = value
 		cancel_button.text = cancel
@@ -29,7 +29,7 @@ var cancel_button := CustomButton.new()
 var confirm_button := CustomButton.new()
 
 
-func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No") -> void:
+func _init(dialog_text := "", confirm_text := "dialog_yes", cancel_text := "dialog_no") -> void:
 	text = dialog_text
 	confirm = confirm_text
 	cancel = cancel_text
