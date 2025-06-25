@@ -5,30 +5,31 @@ extends PanelContainer
 signal confirmed
 signal cancelled
 
-@export var text := "Confirm":
+@export var text := "":
 	set(value):
 		text = value
 		label.text = text
 
-@export var confirm := "Yes":
+@export var confirm := "dialog_yes":
 	set(value):
 		confirm = value
 		confirm_button.text = confirm
 		confirm_button.visible = not confirm.is_empty()
 
-@export var cancel := "No":
+@export var cancel := "dialog_no":
 	set(value):
 		cancel = value
 		cancel_button.text = cancel
 		cancel_button.visible = not cancel.is_empty()
 
 var main_vb := VBoxContainer.new()
+var buttons_hb: BoxContainer
 var label := Label.new()
 var cancel_button := CustomButton.new()
 var confirm_button := CustomButton.new()
 
 
-func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No") -> void:
+func _init(dialog_text := "", confirm_text := "dialog_yes", cancel_text := "dialog_no") -> void:
 	text = dialog_text
 	confirm = confirm_text
 	cancel = cancel_text
@@ -49,28 +50,39 @@ func _init(dialog_text := "Confirm", confirm_text := "Yes", cancel_text := "No")
 	panel.add_child(main_vb)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.custom_minimum_size.x = 360
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label.theme_type_variation = "HeaderMedium"
 	main_vb.add_child(label)
-	var buttons_hb := HBoxContainer.new()
+	buttons_hb = BoxContainer.new()
+	buttons_hb.custom_minimum_size.x = 620
+	resized.connect(_buttons_resized)
+	buttons_hb.set_script(load("res://addons/blazium_shared_menus/game_shared_ui/vertical_box_container_break.gd"))
 	buttons_hb.alignment = BoxContainer.ALIGNMENT_CENTER
-	buttons_hb.add_theme_constant_override("separation", 32)
+	buttons_hb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	buttons_hb.add_theme_constant_override("separation", 24)
 	main_vb.add_child(buttons_hb)
 	cancel_button.user_icon = "cancel"
 	cancel_button.expand_text = false
 	cancel_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	cancel_button.expand_icon = true
-	cancel_button.custom_minimum_size = Vector2(160, 48)
+	#cancel_button.expand_icon = true
 	cancel_button.pressed.connect(_on_button_pressed.bind(false))
+	cancel_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_child(cancel_button)
 	confirm_button.user_icon = "check_circle"
 	confirm_button.expand_text = false
 	confirm_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	confirm_button.expand_icon = true
-	confirm_button.custom_minimum_size = Vector2(160, 48)
+	#confirm_button.expand_icon = true
 	confirm_button.pressed.connect(_on_button_pressed.bind(true))
+	confirm_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_child(confirm_button)
 
+func _buttons_resized():
+	if get_window().size.x < 800:
+		buttons_hb.vertical = true
+		buttons_hb.custom_minimum_size.x = 300
+	else:
+		buttons_hb.vertical = false
+		buttons_hb.custom_minimum_size.x = 620
 
 func _on_button_pressed(is_confirmed: bool):
 	if is_confirmed:

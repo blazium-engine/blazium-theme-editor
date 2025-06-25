@@ -2,7 +2,7 @@
 class_name BlaziumPanel
 extends PanelContainer
 
-var texture = preload("../icons/blazium.svg")
+var texture = load("addons/blazium_theme_editor/icons/blazium.svg")
 var last_focus: Control
 var fallback_focus: Control
 

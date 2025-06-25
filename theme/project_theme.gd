@@ -79,7 +79,7 @@ func generate_theme_styles():
 	def.set_stylebox("panel", "ScrollPanel", scroll_panel)
 	# ChatRichTextLabel
 	def.set_type_variation("ChatRichTextLabel", "RichTextLabel")
-	var italics_font: FontFile = preload("fonts/Inter/Inter_Italics.ttf")
+	var italics_font: FontFile = load("addons/blazium_theme_editor/theme/fonts/Inter/Inter_Italics.ttf")
 	def.set_font("italics_font", "ChatRichTextLabel", italics_font)
 	# SelectedButton
 	def.set_type_variation("SelectedButton", "Button")

@@ -10,13 +10,13 @@ var reload_theme: Button
 
 func _enter_tree() -> void:
 	if Engine.is_editor_hint():
-		theme_editor = preload("res://addons/blazium_theme_editor/editor/tools/theme_editor.tscn").instantiate()
+		theme_editor = load("res://addons/blazium_theme_editor/editor/tools/theme_editor.tscn").instantiate()
 		theme_editor.hide()
 		EditorInterface.get_base_control().add_child(theme_editor)
 		add_tool_menu_item("Blazium Theme Editor", _show_theme_editor)
 		reload_theme = Button.new()
 		reload_theme.tooltip_text = "Reload Project Theme"
-		reload_theme.icon = preload("editor/icons/ReloadTheme.svg")
+		reload_theme.icon = load("editor/icons/ReloadTheme.svg")
 		reload_theme.pressed.connect(_reload_theme)
 		add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, reload_theme)
 	singleton = self

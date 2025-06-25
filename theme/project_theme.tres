@@ -1,7 +1,23 @@
-[gd_resource type="Theme" script_class="GeneratedTheme" load_steps=2 format=3 uid="uid://c8qig4a3cme6e"]
+[gd_resource type="Theme" script_class="GeneratedTheme" load_steps=5 format=3 uid="uid://c8qig4a3cme6e"]
 
 [ext_resource type="Script" uid="uid://cqvltju4t2t3" path="res://addons/blazium_theme_editor/theme/project_theme.gd" id="1_t2n81"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sto08"]
+color = Color(0.992157, 0.992157, 0.992157, 0.588235)
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2n81"]
+border_width_left = 30
+border_width_right = 15
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_t2n81"]
+color = Color(0.992157, 0.992157, 0.992157, 0.588235)
+thickness = 6
+vertical = true
+
 [resource]
+HSeparator/styles/separator = SubResource("StyleBoxLine_sto08")
 LineEdit/colors/selection_color = Color(0.207843, 0.580392, 0.831373, 0.498039)
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_t2n81")
+VSeparator/styles/separator = SubResource("StyleBoxLine_t2n81")
 script = ExtResource("1_t2n81")
