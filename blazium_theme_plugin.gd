@@ -16,7 +16,7 @@ func _enter_tree() -> void:
 		add_tool_menu_item("Blazium Theme Editor", _show_theme_editor)
 		reload_theme = Button.new()
 		reload_theme.tooltip_text = "Reload Project Theme"
-		reload_theme.icon = load("editor/icons/ReloadTheme.svg")
+		reload_theme.icon = load("res://addons/blazium_theme_editor/editor/icons/ReloadTheme.svg")
 		reload_theme.pressed.connect(_reload_theme)
 		add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, reload_theme)
 	singleton = self
