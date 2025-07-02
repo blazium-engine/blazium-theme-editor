@@ -1,4 +1,4 @@
-# Blazoum Theme Editor
+# Blazium Theme Editor
 
 Addon that has a set of generic classes to extend custom ones:
 
