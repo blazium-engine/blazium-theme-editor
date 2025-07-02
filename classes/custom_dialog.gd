@@ -64,14 +64,12 @@ func _init(dialog_text := "", confirm_text := "dialog_yes", cancel_text := "dial
 	cancel_button.user_icon = "cancel"
 	cancel_button.expand_text = false
 	cancel_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	#cancel_button.expand_icon = true
 	cancel_button.pressed.connect(_on_button_pressed.bind(false))
 	cancel_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_child(cancel_button)
 	confirm_button.user_icon = "check_circle"
 	confirm_button.expand_text = false
 	confirm_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	#confirm_button.expand_icon = true
 	confirm_button.pressed.connect(_on_button_pressed.bind(true))
 	confirm_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_child(confirm_button)
