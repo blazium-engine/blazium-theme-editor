@@ -1,5 +1,7 @@
 # Blazium Theme Editor
 
+![example](./docs/example.gif)
+
 Addon that has a set of generic classes to extend custom ones:
 
 - Avatar: Control that renders an image from a texture atlas.
