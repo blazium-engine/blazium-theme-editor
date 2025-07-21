@@ -187,7 +187,7 @@ func scale_changed():
 	custom_popup_panel.corner_radius_top_left = floor(16 * base_scale)
 	custom_popup_panel.corner_radius_top_right = floor(16 * base_scale)
 	custom_popup_panel.set_content_margin_all(16 * base_scale)
-	custom_popup_panel.shadow_size = 4 * base_scale
+	custom_popup_panel.shadow_size = int(4.0 * base_scale)
 	def.set_constant("separation", "CustomPopupVBox", floor(32 * base_scale))
 	scroll_panel.set_corner_radius_all(floor(4 * base_scale))
 

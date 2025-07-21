@@ -48,10 +48,10 @@ func _get_minimum_size() -> Vector2:
 	return (texture.get_size() / Vector2(h_frames, v_frames)) * texture_scale
 
 
-@warning_ignore("integer_division")
 func _draw() -> void:
 	if texture:
 		var _size := texture.get_size() / Vector2(h_frames, v_frames)
+		@warning_ignore("integer_division")
 		var src := Rect2(_size * Vector2(frame % h_frames, floor(frame / v_frames)), _size)
 		draw_texture_rect_region(texture, Rect2(Vector2.ZERO, _size * texture_scale), src)
 
