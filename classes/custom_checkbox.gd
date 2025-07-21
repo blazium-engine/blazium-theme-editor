@@ -11,12 +11,6 @@ extends CheckBox
 func _init() -> void:
 	ThemeDB.icons_changed.connect(_update)
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	pressed.connect(_pressed_timeout)
-
-func _pressed_timeout():
-	disabled = true
-	await get_tree().create_timer(0.5).timeout
-	disabled = false
 
 
 func _update():
