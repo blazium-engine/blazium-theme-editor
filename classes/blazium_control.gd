@@ -1,5 +1,5 @@
 class_name BlaziumControl
-extends Node
+extends Control
 
 var last_focus: Control
 var fallback_focus: Control
