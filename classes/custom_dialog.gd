@@ -56,7 +56,6 @@ func _init(dialog_text := "", confirm_text := "dialog_yes", cancel_text := "dial
 	buttons_hb = BoxContainer.new()
 	buttons_hb.custom_minimum_size.x = 620
 	resized.connect(_buttons_resized)
-	buttons_hb.set_script(load("res://addons/blazium_theme_editor/classes/vertical_box_container_break.gd"))
 	buttons_hb.alignment = BoxContainer.ALIGNMENT_CENTER
 	buttons_hb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	buttons_hb.add_theme_constant_override("separation", 24)
